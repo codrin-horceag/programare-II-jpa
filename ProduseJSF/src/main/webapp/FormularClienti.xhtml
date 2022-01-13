@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
+<body>
+	<div
+		style="width: 100%; font-size: 36px; line-height: 48px; background-color: navy; color: white">Client</div>
+	<h:form id="formClientForm">
+     <h:panelGrid columns="2" id="p1" border="1">
+        <f:facet name="header">
+     <h:outputText value="Formular Clienti"/>
+        </f:facet>
+        
+        
+        
+        <h:panelGrid border="1" columns="2" id="p2">
+            <h:commandButton id="cmdPrevious" value="Previous" actionListener="#{formularClienti.previousClient}"/>
+            <h:commandButton id="cmdNext" value="Next" actionListener="#{formularClienti.nextClient}"/>
+        </h:panelGrid>
+    
+        <h:outputText value="Nume:"/>
+          <h:inputText id="client_nume" value="#{formularClienti.client.numeClient}"/>
+        <h:outputText value="ID"/>
+          <h:inputText id="client_id" value="#{formularClienti.client.idClient}"/>  
+        <h:outputText value="Adresa"/>
+          <h:inputText id="client_adresa" value="#{formularClienti.client.adresa}"/>
+          
+        <h:panelGrid border="1" columns="2" id="p3">
+          <h:commandButton id="cmdAdaugare" value="Adauga" actionListener="#{formularClienti.adaugareClient}"/>
+          <h:commandButton id="cmdStergere" value="Sterge" actionListener="#{formularClienti.stergereClient}"/>
+        </h:panelGrid>
+        
+        <h:panelGrid border="1" columns="2" id="p4">
+          <h:commandButton id="cmdAbandon" value="Abandon" actionListener="#{formularClienti.abandonClient}"/>
+          <h:commandButton id="cmdSalvare" value="Salveaza" actionListener="#{formularClienti.salvareClient}"/>
+        </h:panelGrid>
+        
+        
+	</h:panelGrid>
+	</h:form>
+    
+</body>
+</html>
